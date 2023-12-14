@@ -405,8 +405,8 @@ export const Calendar: React.FC<CalendarProps> = ({
   };
 
   const getCalendarValuesForSecond = () => {
-    const topValues: ReactChild[] = [];
-    const bottomValues: ReactChild[] = [];
+    const topValues = [];
+    const bottomValues = [];
     const topDefaultHeight = headerHeight * 0.5;
     const dates = dateSetup.dates;
     for (let i = 0; i < dates.length; i++) {
