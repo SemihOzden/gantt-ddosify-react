@@ -190,7 +190,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     columnWidth,
     dateSetup.dates,
     dateSetup.viewMode,
-    viewMode,
+    viewMode, 
     currentViewDate,
     setCurrentViewDate,
   ]);

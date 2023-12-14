@@ -4,8 +4,8 @@ export function initTasks() {
   const currentDate = new Date();
   const tasks: Task[] = [
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1,12,10,40,0),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15,12,28,40,800),
       name: "Some Project",
       id: "ProjectSample",
       progress: 25,
@@ -14,13 +14,11 @@ export function initTasks() {
       displayOrder: 1,
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2,12,28,40,0),
       end: new Date(
         currentDate.getFullYear(),
         currentDate.getMonth(),
-        2,
-        12,
-        28
+        2,12,28,40,800
       ),
       name: "Idea",
       id: "Task 0",

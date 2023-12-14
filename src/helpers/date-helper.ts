@@ -137,6 +137,18 @@ export const ganttDateRange = (
       newEndDate = startOfDate(newEndDate, "day");
       newEndDate = addToDate(newEndDate, 1, "day");
       break;
+    case ViewMode.Minute:
+      newStartDate = startOfDate(newStartDate, "minute");
+      newStartDate = addToDate(newStartDate, -60 * preStepsCount, "minute");
+      newEndDate = startOfDate(newEndDate, "minute");
+      newEndDate = addToDate(newEndDate, 60, "minute");
+      break;
+    case ViewMode.Second:
+      newStartDate = startOfDate(newStartDate, "second");
+      newStartDate = addToDate(newStartDate, -3600 * preStepsCount, "second");
+      newEndDate = startOfDate(newEndDate, "second");
+      newEndDate = addToDate(newEndDate, 3600, "second");
+      break;
   }
   return [newStartDate, newEndDate];
 };
@@ -174,6 +186,13 @@ export const seedDates = (
       case ViewMode.Hour:
         currentDate = addToDate(currentDate, 1, "hour");
         break;
+      case ViewMode.Minute:
+        currentDate = addToDate(currentDate, 60, "minute");
+        break;
+      case ViewMode.Second:
+        currentDate = addToDate(currentDate, 3600, "second");
+        break;
+
     }
     dates.push(currentDate);
   }
@@ -239,3 +258,39 @@ export const getWeekNumberISO8601 = (date: Date) => {
 export const getDaysInMonth = (month: number, year: number) => {
   return new Date(year, month + 1, 0).getDate();
 };
+
+export const formatDuration=(durationInMilliseconds:number)=> {
+  const seconds = Math.floor(durationInMilliseconds / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  const remainingHours = hours % 24;
+  const remainingMinutes = minutes % 60;
+  const remainingSeconds = seconds % 60;
+  const remainingMilliseconds = durationInMilliseconds % 1000;
+
+  const formattedDuration = [];
+  
+  if (days > 0) {
+    formattedDuration.push(`${days} day${days > 1 ? 's' : ''}`);
+  }
+
+  if (remainingHours > 0) {
+    formattedDuration.push(`${remainingHours} hour${remainingHours > 1 ? 's' : ''}`);
+  }
+
+  if (remainingMinutes > 0) {
+    formattedDuration.push(`${remainingMinutes} minute${remainingMinutes > 1 ? 's' : ''}`);
+  }
+
+  if (remainingSeconds > 0) {
+    formattedDuration.push(`${remainingSeconds} second${remainingSeconds > 1 ? 's' : ''}`);
+  }
+
+  if (remainingMilliseconds > 0) {
+    formattedDuration.push(`${remainingMilliseconds} millisecond${remainingMilliseconds > 1 ? 's' : ''}`);
+  }
+
+  return formattedDuration.join(', ');
+}

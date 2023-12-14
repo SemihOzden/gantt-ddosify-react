@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Task } from "../../types/public-types";
 import { BarTask } from "../../types/bar-task";
 import styles from "./tooltip.module.css";
+import {formatDuration} from "../../helpers/date-helper";
 
 export type TooltipProps = {
   task: BarTask;
@@ -127,14 +128,23 @@ export const StandardTooltipContent: React.FC<{
         task.name
       }: ${task.start.getDate()}-${
         task.start.getMonth() + 1
-      }-${task.start.getFullYear()} - ${task.end.getDate()}-${
+      }-${task.start.getFullYear()}
+      -${task.start.getHours()}:${task.start.getMinutes()}:${task.start.getSeconds()}:${
+        task.start.getMilliseconds()
+      }
+      
+      - ${task.end.getDate()}-${
         task.end.getMonth() + 1
-      }-${task.end.getFullYear()}`}</b>
+      }-${task.end.getFullYear()}
+      -${task.end.getHours()}:${task.end.getMinutes()}:${task.end.getSeconds()}:${
+        task.end.getMilliseconds()
+      }`}</b>
       {task.end.getTime() - task.start.getTime() !== 0 && (
-        <p className={styles.tooltipDefaultContainerParagraph}>{`Duration: ${~~(
-          (task.end.getTime() - task.start.getTime()) /
-          (1000 * 60 * 60 * 24)
-        )} day(s)`}</p>
+        <p className={styles.tooltipDefaultContainerParagraph}>
+          {`Duration: ${formatDuration(task.end.getTime() - task.start.getTime())}`}
+          
+
+        </p>
       )}
 
       <p className={styles.tooltipDefaultContainerParagraph}>
