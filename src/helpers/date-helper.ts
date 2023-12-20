@@ -145,16 +145,19 @@ export const ganttDateRange = (
       break;
     case ViewMode.Second:
       newStartDate = startOfDate(newStartDate, "second");
-      newStartDate = addToDate(newStartDate, -3600 * preStepsCount, "second");
+      newStartDate = addToDate(newStartDate, -100 * preStepsCount, "second");
       newEndDate = startOfDate(newEndDate, "second");
-      newEndDate = addToDate(newEndDate, 3600, "second");
+      newEndDate = addToDate(newEndDate, 100, "second");
       break;
       // in case of millisecond start and end date should start from 0 and end with 1000 ms respectively to avoid rounding issues in calculations and rendering of the chart (e.g. 1.9999999999999998 instead of 2) - see #100 and #101 for details and examples of the issue and fix ( 
     case ViewMode.Millisecond:
-      newStartDate = startOfDate(newStartDate, "second");
-      newStartDate = addToDate(newStartDate, -1 * preStepsCount, "second");
-      newEndDate = startOfDate(newEndDate, "second");
-      newEndDate = addToDate(newEndDate, 1, "second");
+      console.log("s",newStartDate.getTime())
+      console.log(newEndDate.getTime())
+      newStartDate = addToDate(newStartDate, -10 * preStepsCount, "millisecond");
+      newEndDate = addToDate(newEndDate, 10, "millisecond");
+      console.log("e",newStartDate.getTime())
+      console.log(newEndDate.getTime())
+
       break;
   }
   return [newStartDate, newEndDate];
@@ -194,13 +197,13 @@ export const seedDates = (
         currentDate = addToDate(currentDate, 1, "hour");
         break;
       case ViewMode.Minute:
-        currentDate = addToDate(currentDate, 300000, "millisecond");
+        currentDate = addToDate(currentDate, 1, "minute");
         break;
       case ViewMode.Second:
-        currentDate = addToDate(currentDate, 300000, "millisecond");
+        currentDate = addToDate(currentDate, 1, "second");
         break;
       case ViewMode.Millisecond:
-        currentDate = addToDate(currentDate, 300000, "millisecond");
+        currentDate = addToDate(currentDate, 10, "millisecond");
       break;
 
     }

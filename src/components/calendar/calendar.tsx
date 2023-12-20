@@ -458,14 +458,14 @@ export const Calendar: React.FC<CalendarProps> = ({
     const bottomValues = [];
     const topDefaultHeight = headerHeight * 0.5;
     const dates = dateSetup.dates;
-    console.log(dates)
     for (let i = 0; i < dates.length; i++) {
       const date = dates[i];
+      console.log(date.getTime())
       // ((date.getMilliseconds() + (date.getSeconds() * 1000) + (date.getMinutes() * 60 * 1000) + (date.getHours() * 60 * 60 * 1000)) / 24).toFixed(0);
       // bottom value should be ms value starts from 0 to 1 second (1000 ms) for each day with 24 hours (86400000 ms)
       const bottomValue = 
-        ((date.getMilliseconds() + (date.getSeconds() * 1000) + (date.getMinutes() * 60 * 1000) + (date.getHours() * 60 * 60 * 1000)) / 86400000*1000).toFixed(0)+"ms";
-
+        date.getMilliseconds()+"ms";
+console.log(bottomValue)
       bottomValues.push(
         <text
           key={date.getTime()}
@@ -498,7 +498,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         );
       }
     }
-    
+    console.log(topValues,bottomValues)
 
     return [topValues, bottomValues]; 
   };
