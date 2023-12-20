@@ -149,6 +149,16 @@ export const ganttDateRange = (
       newEndDate = startOfDate(newEndDate, "second");
       newEndDate = addToDate(newEndDate, 3600, "second");
       break;
+      // in case of millisecond start and end date should start from 0 and end with 1000 ms respectively to avoid rounding issues in calculations and rendering of the chart (e.g. 1.9999999999999998 instead of 2) - see #100 and #101 for details and examples of the issue and fix ( 
+    case ViewMode.Millisecond:
+      newStartDate = startOfDate(newStartDate, "hour");
+      newStartDate = addToDate(newStartDate, -1 * preStepsCount, "hour");
+      newEndDate = startOfDate(newEndDate, "day");
+      newEndDate = addToDate(newEndDate, 1, "day");
+      break;
+
+
+        
   }
   return [newStartDate, newEndDate];
 };
@@ -192,6 +202,9 @@ export const seedDates = (
       case ViewMode.Second:
         currentDate = addToDate(currentDate, 3600, "second");
         break;
+      case ViewMode.Millisecond:
+        currentDate = addToDate(currentDate, 300000, "millisecond");
+      break;
 
     }
     dates.push(currentDate);
