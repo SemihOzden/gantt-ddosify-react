@@ -197,10 +197,10 @@ export const seedDates = (
         currentDate = addToDate(currentDate, 1, "hour");
         break;
       case ViewMode.Minute:
-        currentDate = addToDate(currentDate, 60, "minute");
+        currentDate = addToDate(currentDate, 300000, "millisecond");
         break;
       case ViewMode.Second:
-        currentDate = addToDate(currentDate, 3600, "second");
+        currentDate = addToDate(currentDate, 300000, "millisecond");
         break;
       case ViewMode.Millisecond:
         currentDate = addToDate(currentDate, 300000, "millisecond");
