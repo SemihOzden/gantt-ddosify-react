@@ -458,6 +458,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     const bottomValues = [];
     const topDefaultHeight = headerHeight * 0.5;
     const dates = dateSetup.dates;
+    console.log(dates)
     for (let i = 0; i < dates.length; i++) {
       const date = dates[i];
       // ((date.getMilliseconds() + (date.getSeconds() * 1000) + (date.getMinutes() * 60 * 1000) + (date.getHours() * 60 * 60 * 1000)) / 24).toFixed(0);
