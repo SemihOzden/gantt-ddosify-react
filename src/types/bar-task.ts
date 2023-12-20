@@ -18,6 +18,16 @@ export interface BarTask extends Task {
     progressColor: string;
     progressSelectedColor: string;
   };
+  attributes?: {
+    path?: string,
+    to_ip?: string,
+    method?: string,
+    from_ip?: string,
+    to_port?: number,
+    protocol?: string,
+    from_port?: number,
+    status_code?:number
+  };
 }
 
 export type TaskTypeInternal = TaskType | "smalltask";
