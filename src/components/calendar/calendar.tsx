@@ -453,6 +453,55 @@ export const Calendar: React.FC<CalendarProps> = ({
     return [topValues, bottomValues];
   };
   
+  const getCalendarValuesForMillisecond = () => {
+    const topValues = [];
+    const bottomValues = [];
+    const topDefaultHeight = headerHeight * 0.5;
+    const dates = dateSetup.dates;
+    for (let i = 0; i < dates.length; i++) {
+      const date = dates[i];
+      // ((date.getMilliseconds() + (date.getSeconds() * 1000) + (date.getMinutes() * 60 * 1000) + (date.getHours() * 60 * 60 * 1000)) / 24).toFixed(0);
+      // bottom value should be ms value starts from 0 to 1 second (1000 ms) for each day with 24 hours (86400000 ms)
+      const bottomValue = 
+        ((date.getMilliseconds() + (date.getSeconds() * 1000) + (date.getMinutes() * 60 * 1000) + (date.getHours() * 60 * 60 * 1000)) / 86400000*1000).toFixed(0)+"ms";
+
+      bottomValues.push(
+        <text
+          key={date.getTime()}
+          y={headerHeight * 0.8}
+          x={columnWidth * (i + +rtl)}
+          className={styles.calendarBottomText}
+          fontFamily={fontFamily}
+        >
+          {bottomValue}
+        </text>
+      );
+      if (i !== 0 && date.getDate() !== dates[i - 1].getDate()) {
+        const displayDate = dates[i - 1];
+        const topValue = `${getLocalDayOfWeek(
+          displayDate,
+          locale,
+          "long"
+        )}, ${displayDate.getDate()} ${getLocaleMonth(displayDate, locale)}`;
+        const topPosition = (date.getHours() - 24) / 2;
+        topValues.push(
+          <TopPartOfCalendar
+            key={topValue + displayDate.getFullYear()}
+            value={topValue}
+            x1Line={columnWidth * i}
+            y1Line={0}
+            y2Line={topDefaultHeight}
+            xText={columnWidth * (i + topPosition)}
+            yText={topDefaultHeight * 0.9}
+          />
+        );
+      }
+    }
+    
+
+    return [topValues, bottomValues]; 
+  };
+  
 
 
   let topValues: ReactChild[] = [];
@@ -485,6 +534,10 @@ export const Calendar: React.FC<CalendarProps> = ({
       break;
     case ViewMode.Second:
       [topValues, bottomValues] = getCalendarValuesForSecond();
+      break;
+    case ViewMode.Millisecond:
+      [topValues, bottomValues] = getCalendarValuesForMillisecond();
+      break;
   }
   return (
     <g className="calendar" fontSize={fontSize} fontFamily={fontFamily}>
