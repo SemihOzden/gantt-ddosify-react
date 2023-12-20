@@ -15,8 +15,8 @@ export function initTasks() {
     // },
     
     {
-        start: new Date(100000001001),
-        end: new Date(100000001148),
+      start: new Date("2023-12-15T13:51:47.000Z"),
+      end: new Date("2023-12-15T13:51:47.148Z"),
         name: "/api/hammer/health_check/",
         id: "31",
         progress: 100,
@@ -34,8 +34,8 @@ export function initTasks() {
         }
     },
     {
-        start: new Date(100000001001),
-        end: new Date(100000001211),
+      start: new Date("2023-12-15T13:51:47.000Z"),
+      end: new Date("2023-12-15T13:51:47.211Z"),
         name: "/forbidden",
         id: "30",
         progress: 100,
