@@ -27,7 +27,7 @@ export interface Task {
     protocol?: string,
     from_port?: number,
     status_code?:number
-};
+  };
   /**
    * From 0 to 100
    */
