@@ -15,6 +15,12 @@ export const ViewSwitcher: React.FC<ViewSwitcherProps> = ({
     <div className="ViewContainer">
        <button
         className="Button"
+        onClick={() => onViewModeChange(ViewMode.Millisecond)}
+      >
+        Millisecond
+      </button>
+       <button
+        className="Button"
         onClick={() => onViewModeChange(ViewMode.Second)}
       >
         Second
