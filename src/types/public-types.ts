@@ -18,6 +18,16 @@ export interface Task {
   name: string;
   start: Date;
   end: Date;
+  attributes?: {
+    path?: string,
+    to_ip?: string,
+    method?: string,
+    from_ip?: string,
+    to_port?: number,
+    protocol?: string,
+    from_port?: number,
+    status_code?:number
+};
   /**
    * From 0 to 100
    */
