@@ -145,9 +145,9 @@ export const ganttDateRange = (
       break;
     case ViewMode.Second:
       newStartDate = startOfDate(newStartDate, "second");
-      newStartDate = addToDate(newStartDate, -100 * preStepsCount, "second");
+      newStartDate = addToDate(newStartDate, -1 * preStepsCount, "second");
       newEndDate = startOfDate(newEndDate, "second");
-      newEndDate = addToDate(newEndDate, 100, "second");
+      newEndDate = addToDate(newEndDate, 1, "second");
       break;
       // in case of millisecond start and end date should start from 0 and end with 1000 ms respectively to avoid rounding issues in calculations and rendering of the chart (e.g. 1.9999999999999998 instead of 2) - see #100 and #101 for details and examples of the issue and fix ( 
     case ViewMode.Millisecond:
@@ -168,6 +168,8 @@ export const seedDates = (
   endDate: Date,
   viewMode: ViewMode
 ) => {
+  console.log(endDate.getTime()-startDate.getTime())
+  const diff=Math.floor((endDate.getTime()-startDate.getTime())/100)*10;
   let currentDate: Date = new Date(startDate);
   const dates: Date[] = [currentDate];
   while (currentDate < endDate) {
@@ -200,10 +202,10 @@ export const seedDates = (
         currentDate = addToDate(currentDate, 1, "minute");
         break;
       case ViewMode.Second:
-        currentDate = addToDate(currentDate, 1, "second");
+        currentDate = addToDate(currentDate, diff, "millisecond");
         break;
       case ViewMode.Millisecond:
-        currentDate = addToDate(currentDate, 10, "millisecond");
+        currentDate = addToDate(currentDate, diff, "millisecond");
       break;
 
     }
