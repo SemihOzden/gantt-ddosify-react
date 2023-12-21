@@ -27,7 +27,16 @@ export interface Task {
     to_port?: number,
     protocol?: string,
     from_port?: number,
-    status_code?:number
+    status_code?:number,
+    from_uid_pod?:string,
+    to_uid_service?:string,
+    to_url_outbound?:string,
+    from_uid_service?:string,
+    to_uid_daemonset?:string,
+    to_uid_deployment?:string,
+    from_uid_daemonset?:string,
+    from_uid_deployment?:string,
+    monitoring_id?:string,
   };
   /**
    * From 0 to 100
