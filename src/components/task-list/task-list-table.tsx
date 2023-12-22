@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import styles from "./task-list-table.module.css";
 import { Task } from "../../types/public-types";
 
@@ -15,10 +15,9 @@ const toLocaleDateStringFactory =
     return lds;
   };
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
-  weekday: "short",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric"
 };
 
 export const TaskListTableDefault: React.FC<{
@@ -44,6 +43,17 @@ export const TaskListTableDefault: React.FC<{
     () => toLocaleDateStringFactory(locale),
     [locale]
   );
+
+
+  useEffect(() => {
+    if(tasks.length > 0){
+
+    
+     toLocaleDateString(tasks[0].start, dateTimeOptions)
+    }
+    
+
+  }, [tasks,toLocaleDateString])
 
   return (
     <div
@@ -89,24 +99,28 @@ export const TaskListTableDefault: React.FC<{
                 <div>{t.name}</div>
               </div>
             </div>
-            <div
+            {/* FROM Header */}
+            {/* <div
               className={styles.taskListCell}
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
               }}
             >
-              &nbsp;{toLocaleDateString(t.start, dateTimeOptions)}
-            </div>
-            <div
+              &nbsp;{t.start.getUTCHours() + ":" + t.start.getUTCMinutes() + ":" + t.start.getUTCSeconds() + ":" + t.start.getUTCMilliseconds()}
+            </div> */}
+            {/* TO Header */}
+            {/* <div
               className={styles.taskListCell}
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
               }}
             >
-              &nbsp;{toLocaleDateString(t.end, dateTimeOptions)}
-            </div>
+              &nbsp;{
+                t.end.getUTCHours() + ":" + t.end.getUTCMinutes() + ":" + t.end.getUTCSeconds() + ":" + t.end.getUTCMilliseconds()
+              }
+            </div> */}
           </div>
         );
       })}

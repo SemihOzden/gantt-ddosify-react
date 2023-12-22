@@ -29,14 +29,15 @@ export const TaskListHeaderDefault: React.FC<{
         >
           &nbsp;Name
         </div>
-        <div
+        {/* <div
           className={styles.ganttTable_HeaderSeparator}
           style={{
             height: headerHeight * 0.5,
             marginTop: headerHeight * 0.2,
           }}
-        />
-        <div
+        /> */}
+        {/* From header title */}
+        {/* <div
           className={styles.ganttTable_HeaderItem}
           style={{
             minWidth: rowWidth,
@@ -50,15 +51,16 @@ export const TaskListHeaderDefault: React.FC<{
             height: headerHeight * 0.5,
             marginTop: headerHeight * 0.25,
           }}
-        />
-        <div
+        /> */}
+        {/* To header title */}
+        {/* <div
           className={styles.ganttTable_HeaderItem}
           style={{
             minWidth: rowWidth,
           }}
         >
           &nbsp;To
-        </div>
+        </div> */}
       </div>
     </div>
   );
