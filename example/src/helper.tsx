@@ -16,7 +16,7 @@ export function initTasks() {
     
     {
       start: new Date("2023-12-15T13:51:47.000Z"),
-      end: new Date("2023-12-15T13:51:47.148Z"),
+      end: new Date("2023-12-15T13:51:47.026Z"),
         name: "/api/hammer/health_check/",
         id: "31",
         progress: 100,
@@ -33,26 +33,7 @@ export function initTasks() {
             status_code: 200
         }
     },
-    {
-      start: new Date("2023-12-15T13:51:47.000Z"),
-      end: new Date("2023-12-15T13:51:47.211Z"),
-        name: "/forbidden",
-        id: "30",
-        progress: 100,
-        type: "task",
-        displayOrder: 9,
-        attributes: {
-            path: "/forbidden",
-            to_ip: "10.100.106.48",
-            method: "GET",
-            from_ip: "192.168.94.28",
-            to_port: 8001,
-            protocol: "L7_PROTOCOL_HTTP",
-            from_port: 8000,
-            status_code: 403
-        },
-        dependencies: ["31"]
-    },
+    
   
     // {
     //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2,12,28,40,10),

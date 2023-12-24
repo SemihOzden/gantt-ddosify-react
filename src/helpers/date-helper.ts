@@ -169,8 +169,7 @@ export const seedDates = (
   endDate: Date,
   viewMode: ViewMode
 ) => {
-  console.log(endDate.getTime()-startDate.getTime())
-  const diff=Math.floor((endDate.getTime()-startDate.getTime())/100)*10;
+  const diff=Math.floor((endDate.getTime()-startDate.getTime())/100)*10 || 1;
   let currentDate: Date = new Date(startDate);
   const dates: Date[] = [currentDate];
   while (currentDate < endDate) {
