@@ -3,6 +3,8 @@ import styles from "./task-list-table.module.css";
 import { Task } from "../../types/public-types";
 
 const localeDateStringCache = {};
+const depthCache = {}
+
 const toLocaleDateStringFactory =
   (locale: string) =>
   (date: Date, dateTimeOptions: Intl.DateTimeFormatOptions) => {
@@ -14,6 +16,16 @@ const toLocaleDateStringFactory =
     }
     return lds;
   };
+
+const handleDepth=(project: any,newProjectId: any)=>{
+  if(newProjectId){
+    depthCache[newProjectId] = depthCache[project] ? (depthCache[project]+1) : 1
+  }
+  if(depthCache[project])
+    return depthCache[project]
+  else return 0;
+}
+
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
   hour: "numeric",
   minute: "numeric",
@@ -48,7 +60,7 @@ export const TaskListTableDefault: React.FC<{
   useEffect(() => {
     if(tasks.length > 0){
 
-    
+
      toLocaleDateString(tasks[0].start, dateTimeOptions)
     }
     
@@ -86,6 +98,8 @@ export const TaskListTableDefault: React.FC<{
               title={t.name}
             >
               <div className={styles.taskListNameWrapper}>
+              <span style={{marginLeft:`${(handleDepth(t.project,t?.type ? t?.id : null))*16}px`}}></span>
+                
                 <div
                   className={
                     expanderSymbol
@@ -96,7 +110,10 @@ export const TaskListTableDefault: React.FC<{
                 >
                   {expanderSymbol}
                 </div>
-                <div>{t.name}</div>
+                <div className={styles.taskListLine}>
+                |
+                </div>
+                <div style={{height:"14px", marginTop:"5px"}}>{t.name}</div>
               </div>
             </div>
             {/* FROM Header */}

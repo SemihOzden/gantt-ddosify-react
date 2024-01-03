@@ -21,7 +21,7 @@
   display: table-cell;
   vertical-align: middle;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: scroll;
   text-overflow: ellipsis;
 }
 .taskListNameWrapper {
@@ -29,13 +29,23 @@
 }
 
 .taskListExpander {
-  color: rgb(86 86 86);
+  margin-top:4px;
+  color: #0AB89B;
   font-size: 0.6rem;
   padding: 0.15rem 0.2rem 0rem 0.2rem;
   user-select: none;
   cursor: pointer;
+  width:9.5px
 }
+
+.taskListLine {
+  color: #0AB89B;
+  margin-top: -8px;
+  font-size: 28px;
+}
+
 .taskListEmptyExpander {
+  margin-top:4px;
   font-size: 0.6rem;
   padding-left: 1rem;
   user-select: none;
