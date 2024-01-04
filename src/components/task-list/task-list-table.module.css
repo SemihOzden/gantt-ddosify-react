@@ -21,7 +21,7 @@
   display: table-cell;
   vertical-align: middle;
   white-space: nowrap;
-  overflow: scroll;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .taskListNameWrapper {
