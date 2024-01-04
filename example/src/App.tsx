@@ -87,7 +87,6 @@ const App = () => {
         onExpanderClick={handleExpanderClick}
         listCellWidth={isChecked ? "155px" : ""}
         columnWidth={columnWidth}
-        rowHeight={25}
       />
       <h3>Gantt With Limited Height</h3>
       <Gantt
@@ -103,7 +102,6 @@ const App = () => {
         listCellWidth={isChecked ? "155px" : ""}
         ganttHeight={300}
         columnWidth={columnWidth}
-        rowHeight={25}
       />
     </div>
   );

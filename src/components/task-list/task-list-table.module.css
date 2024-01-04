@@ -29,24 +29,24 @@
 }
 
 .taskListExpander {
-  margin-top:4px;
+  margin-top:calc(7px - 0.3rem);
   color: #0AB89B;
   font-size: 0.6rem;
-  padding: 0.15rem 0.2rem 0rem 0.2rem;
   user-select: none;
   cursor: pointer;
-  width:9.5px
+  width:12px;
 }
 
 .taskListLine {
-  color: #0AB89B;
-  margin-top: -8px;
-  font-size: 28px;
+  height:14px;
+  border:1.3px solid #0AB89B;
+  width:0px;
+  margin-right:2px
 }
 
 .taskListEmptyExpander {
+  min-width:12px;
+  max-width:12px;
   margin-top:4px;
-  font-size: 0.6rem;
-  padding-left: 1rem;
   user-select: none;
 }

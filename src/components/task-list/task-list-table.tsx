@@ -98,7 +98,7 @@ export const TaskListTableDefault: React.FC<{
               title={t.name}
             >
               <div className={styles.taskListNameWrapper}>
-              <span style={{marginLeft:`${(handleDepth(t.project,t?.type ? t?.id : null))*16}px`}}></span>
+              <span style={{marginLeft:`${(handleDepth(t.project,t?.type ? t?.id : null))*12}px`}}></span>
                 
                 <div
                   className={
@@ -111,9 +111,8 @@ export const TaskListTableDefault: React.FC<{
                   {expanderSymbol}
                 </div>
                 <div className={styles.taskListLine}>
-                |
                 </div>
-                <div style={{height:"14px", marginTop:"5px"}}>{t.name}</div>
+                <div style={{height:"14px"}}>{t.name}</div>
               </div>
             </div>
             {/* FROM Header */}

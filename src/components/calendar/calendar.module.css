@@ -28,5 +28,9 @@
   fill: #3F4A5A;
   stroke: #687a96;
   stroke-width: 1.4;
-  
+  overflow:visible;
+}
+
+.calendarCustom{
+  overflow:visible;
 }

@@ -5,8 +5,8 @@ export function initTasks() {
   // const currentDate = new Date();
   const tasks: Task[] = [
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date("2023-12-15T13:51:47.100Z"),
+      end: new Date("2023-12-15T13:51:48.500Z"),
       name: "Some Project",
       id: "ProjectSample",
       progress: 25,
@@ -14,8 +14,8 @@ export function initTasks() {
       hideChildren: false
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8, 0, 0),
+      start: new Date("2023-12-15T13:51:47.400Z"),
+      end: new Date("2023-12-15T13:51:47.800Z"),
       name: "Discussion with team",
       id: "Task 2",
       progress: 10,
@@ -23,14 +23,8 @@ export function initTasks() {
       project: "ProjectSample"
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth(),
-        2,
-        12,
-        28
-      ),
+      start: new Date("2023-12-15T13:51:47.800Z"),
+      end: new Date("2023-12-15T13:51:48.500Z"),
       name: "Idea",
       id: "ProjectSample2",
       progress: 100,
@@ -39,8 +33,8 @@ export function initTasks() {
       hideChildren: false
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 9, 0, 0),
+      start:new Date("2023-12-15T13:51:47.800Z"),
+      end: new Date("2023-12-15T13:51:48.000Z"),
       name: "Developing",
       id: "Task 3",
       progress: 2,
@@ -49,8 +43,8 @@ export function initTasks() {
       project: "ProjectSample2"
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 10),
+      start: new Date("2023-12-15T13:51:48.000Z"),
+      end: new Date("2023-12-15T13:51:48.500Z"),
       name: "Review",
       id: "ProjectSample3",
       type: "project",
@@ -60,8 +54,8 @@ export function initTasks() {
       hideChildren: false
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      start: new Date("2023-12-15T13:51:48.000Z"),
+      end: new Date("2023-12-15T13:51:48.400Z"),
       name: "Release",
       id: "Task 6",
       progress: currentDate.getMonth(),
@@ -70,8 +64,8 @@ export function initTasks() {
       project: "ProjectSample3"
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4, 0, 0),
+      start: new Date("2023-12-15T13:51:48.400Z"),
+      end: new Date("2023-12-15T13:51:48.500Z"),
       name: "Research",
       id: "Task 1",
       progress: 25,
@@ -80,8 +74,8 @@ export function initTasks() {
       project: "ProjectSample2"
     },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 18),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 19),
+      start: new Date("2023-12-15T13:51:47.450Z"),
+      end: new Date("2023-12-15T13:51:48.500Z"),
       name: "Party Time",
       id: "Task 9",
       progress: 0,
