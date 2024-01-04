@@ -158,7 +158,7 @@ export const ganttDateRange = (
       newEndDate = addToDate(newEndDate, 1, "millisecond");
       // console.log("e",newStartDate.getTime())
       // console.log(newEndDate.getTime())
-
+      newEndDate.setMilliseconds(newEndDate.getMilliseconds()-newStartDate.getMilliseconds())
       break;
   }
   return [newStartDate, newEndDate];
