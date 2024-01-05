@@ -151,14 +151,7 @@ export const ganttDateRange = (
       break;
       // in case of millisecond start and end date should start from 0 and end with 1000 ms respectively to avoid rounding issues in calculations and rendering of the chart (e.g. 1.9999999999999998 instead of 2) - see #100 and #101 for details and examples of the issue and fix ( 
     case ViewMode.Millisecond:
-      // console.log("s",newStartDate.getTime())
-      // console.log(newEndDate.getTime())
-      // console.log("preStepsCount",preStepsCount)
       newStartDate = addToDate(newStartDate, -1 * preStepsCount, "millisecond");
-      newEndDate = addToDate(newEndDate, 1, "millisecond");
-      // console.log("e",newStartDate.getTime())
-      // console.log(newEndDate.getTime())
-      newEndDate.setMilliseconds(newEndDate.getMilliseconds()-newStartDate.getMilliseconds())
       break;
   }
   return [newStartDate, newEndDate];

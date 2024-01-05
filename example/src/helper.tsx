@@ -1,88 +1,246 @@
 import { Task } from "../../dist/types/public-types";
 
 export function initTasks() {
-  const currentDate = new Date();
   // const currentDate = new Date();
   const tasks: Task[] = [
     {
-      start: new Date("2023-12-15T13:51:47.100Z"),
-      end: new Date("2023-12-15T13:51:48.500Z"),
-      name: "Some Project",
-      id: "ProjectSample",
-      progress: 25,
-      type: "project",
-      hideChildren: false
+        "start": new Date("2023-12-29T15:13:12.029"),
+        "end": new Date("2023-12-29T15:13:12.055"),
+        "name": "/BCDEFGH/",
+        "id": "span908617",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "hideChildren": true
     },
     {
-      start: new Date("2023-12-15T13:51:47.400Z"),
-      end: new Date("2023-12-15T13:51:47.800Z"),
-      name: "Discussion with team",
-      id: "Task 2",
-      progress: 10,
-      type: "task",
-      project: "ProjectSample"
+        "start": new Date("2023-12-29T15:13:12.032"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/CDEFGH/",
+        "id": "span909141",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span908617",
+        "hideChildren": true
     },
     {
-      start: new Date("2023-12-15T13:51:47.800Z"),
-      end: new Date("2023-12-15T13:51:48.500Z"),
-      name: "Idea",
-      id: "ProjectSample2",
-      progress: 100,
-      type: "project",
-      project: "ProjectSample",
-      hideChildren: false
+        "start": new Date("2023-12-29T15:13:12.036"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/DEFGH/",
+        "id": "span907432",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span909141",
+        "hideChildren": true
     },
     {
-      start:new Date("2023-12-15T13:51:47.800Z"),
-      end: new Date("2023-12-15T13:51:48.000Z"),
-      name: "Developing",
-      id: "Task 3",
-      progress: 2,
-      dependencies: ["Task 2"],
-      type: "task",
-      project: "ProjectSample2"
+        "start": new Date("2023-12-29T15:13:12.039"),
+        "end": new Date("2023-12-29T15:13:12.053"),
+        "name": "/EFGH/",
+        "id": "span908614",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span907432",
+        "hideChildren": true
     },
     {
-      start: new Date("2023-12-15T13:51:48.000Z"),
-      end: new Date("2023-12-15T13:51:48.500Z"),
-      name: "Review",
-      id: "ProjectSample3",
-      type: "project",
-      progress: 70,
-      dependencies: ["Task 2"],
-      project: "ProjectSample2",
-      hideChildren: false
+        "start": new Date("2023-12-29T15:13:12.039"),
+        "end": new Date("2023-12-29T15:13:12.053"),
+        "name": "/EFGH/",
+        "id": "span909139",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span907432"
     },
     {
-      start: new Date("2023-12-15T13:51:48.000Z"),
-      end: new Date("2023-12-15T13:51:48.400Z"),
-      name: "Release",
-      id: "Task 6",
-      progress: currentDate.getMonth(),
-      type: "task",
-      dependencies: ["Task 4"],
-      project: "ProjectSample3"
+        "start": new Date("2023-12-29T15:13:12.043"),
+        "end": new Date("2023-12-29T15:13:12.051"),
+        "name": "/FGH/",
+        "id": "span908613",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span908614",
+        "hideChildren": true
     },
     {
-      start: new Date("2023-12-15T13:51:48.400Z"),
-      end: new Date("2023-12-15T13:51:48.500Z"),
-      name: "Research",
-      id: "Task 1",
-      progress: 25,
-      dependencies: ["Task 0"],
-      type: "task",
-      project: "ProjectSample2"
+        "start": new Date("2023-12-29T15:13:12.043"),
+        "end": new Date("2023-12-29T15:13:12.051"),
+        "name": "/FGH/",
+        "id": "span909138",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908614"
     },
     {
-      start: new Date("2023-12-15T13:51:47.450Z"),
-      end: new Date("2023-12-15T13:51:48.500Z"),
-      name: "Party Time",
-      id: "Task 9",
-      progress: 0,
-      isDisabled: true,
-      type: "task"
+        "start": new Date("2023-12-29T15:13:12.046"),
+        "end": new Date("2023-12-29T15:13:12.050"),
+        "name": "/GH/",
+        "id": "span909137",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span908613",
+        "hideChildren": true
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.046"),
+        "end": new Date("2023-12-29T15:13:12.050"),
+        "name": "/GH/",
+        "id": "span908612",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908613"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.046"),
+        "end": new Date("2023-12-29T15:13:12.050"),
+        "name": "/GH/",
+        "id": "span907430",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908613"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.046"),
+        "end": new Date("2023-12-29T15:13:12.050"),
+        "name": "/GH/",
+        "id": "span905867",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908613"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.049"),
+        "end": new Date("2023-12-29T15:13:12.049"),
+        "name": "/H/",
+        "id": "span905866",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909137"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.049"),
+        "end": new Date("2023-12-29T15:13:12.049"),
+        "name": "/H/",
+        "id": "span907427",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909137"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.049"),
+        "end": new Date("2023-12-29T15:13:12.049"),
+        "name": "/H/",
+        "id": "span908611",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909137"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.049"),
+        "end": new Date("2023-12-29T15:13:12.049"),
+        "name": "/H/",
+        "id": "span909136",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909137"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.036"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/DEFGH/",
+        "id": "span905868",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span909141",
+        "hideChildren": true
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.039"),
+        "end": new Date("2023-12-29T15:13:12.053"),
+        "name": "/EFGH/",
+        "id": "span909739",
+        "progress": 100,
+        "type": "project",
+        "isDisabled": true,
+        "project": "span905868",
+        "hideChildren": true
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.043"),
+        "end": new Date("2023-12-29T15:13:12.051"),
+        "name": "/FGH/",
+        "id": "span909738",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909739"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.036"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/DEFGH/",
+        "id": "span908615",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909141"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.036"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/DEFGH/",
+        "id": "span909140",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span909141"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.032"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/CDEFGH/",
+        "id": "span905869",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908617"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.032"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/CDEFGH/",
+        "id": "span908616",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908617"
+    },
+    {
+        "start": new Date("2023-12-29T15:13:12.032"),
+        "end": new Date("2023-12-29T15:13:12.054"),
+        "name": "/CDEFGH/",
+        "id": "span907434",
+        "progress": 100,
+        "type": "task",
+        "isDisabled": true,
+        "project": "span908617"
     }
-  ];
+];
   return tasks;
 }
 

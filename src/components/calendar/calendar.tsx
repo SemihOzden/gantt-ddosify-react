@@ -463,8 +463,7 @@ export const Calendar: React.FC<CalendarProps> = ({
       
       // bottom value should be ms value starts from 0 to 1 second (1000 ms) for each day with 24 hours (86400000 ms)
       const bottomValue = 
-       i===0 ? "": (date.valueOf()-minDate)+ "ms"
-        // console.log(bottomValue)
+       i===0 ? "": (date.valueOf()-minDate-1)+ "ms"
       bottomValues.push(
         <text
           key={date.getTime()}
