@@ -1,6 +1,6 @@
 {
   "name": "gantt-ddosify-react",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "Interactive Gantt Chart for React with TypeScript.",
   "author": "trying",
   "homepage": "",
