@@ -97,6 +97,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   const [scrollY, setScrollY] = useState(0);
   const [scrollX, setScrollX] = useState(-1);
   const [ignoreScrollEvent, setIgnoreScrollEvent] = useState(false);
+  const [iterations, setIterations] = useState(0);
 
   // task change events
   useEffect(() => {
@@ -113,6 +114,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
       preStepsCount
     );
     let newDates = seedDates(startDate, endDate, viewMode);
+    setIterations(newDates.length)
     if (rtl) {
       newDates = newDates.reverse();
       if (scrollX === -1) {
@@ -243,9 +245,9 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   useEffect(() => {
     if (wrapperRef.current) {
       setSvgContainerWidth(wrapperRef.current.offsetWidth - taskListWidth);
-      setColumnWidth((wrapperRef.current.offsetWidth - taskListWidth)/11)
+      setColumnWidth((wrapperRef.current.offsetWidth - taskListWidth)/(iterations-1))
     }
-  }, [wrapperRef, taskListWidth]);
+  }, [wrapperRef, taskListWidth,iterations]);
 
   useEffect(() => {
     if (ganttHeight) {
