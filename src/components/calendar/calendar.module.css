@@ -9,6 +9,17 @@
   pointer-events: none;
 }
 
+.firstCalendarBottomText {
+  text-anchor: middle;
+  fill: #f7f7f7;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 .calendarTopTick {
   stroke: #687a96;
 }

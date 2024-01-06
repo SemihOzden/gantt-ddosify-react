@@ -97,7 +97,7 @@ export const TaskListTableDefault: React.FC<{
               }}
               title={t.name}
             >
-              <div className={styles.taskListNameWrapper}>
+              <div className={styles.taskListNameWrapper} onClick={() => onExpanderClick(t)}>
               <span style={{marginLeft:`${(handleDepth(t.project,t?.type ? t?.id : null))*12}px`}}></span>
                 
                 <div
@@ -106,7 +106,6 @@ export const TaskListTableDefault: React.FC<{
                       ? styles.taskListExpander
                       : styles.taskListEmptyExpander
                   }
-                  onClick={() => onExpanderClick(t)}
                 >
                   {expanderSymbol}
                 </div>

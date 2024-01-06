@@ -26,6 +26,7 @@
 }
 .taskListNameWrapper {
   display: flex;
+  cursor: pointer;
 }
 
 .taskListExpander {

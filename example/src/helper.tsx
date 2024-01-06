@@ -4,14 +4,14 @@ export function initTasks() {
   // const currentDate = new Date();
   const tasks: Task[] = [
     {
-        "start": new Date("2023-12-29T15:13:12.029"),
-        "end": new Date("2023-12-29T15:13:12.055"),
+        "start": new Date("2023-12-29T15:13:12.000"),
+        "end": new Date("2023-12-29T15:13:12.080"),
         "name": "/BCDEFGH/",
         "id": "span908617",
         "progress": 100,
         "type": "project",
         "isDisabled": true,
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.032"),
@@ -22,7 +22,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span908617",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.036"),
@@ -33,7 +33,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span909141",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.039"),
@@ -44,7 +44,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span907432",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.039"),
@@ -65,7 +65,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span908614",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.043"),
@@ -86,7 +86,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span908613",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.046"),
@@ -167,7 +167,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span909141",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.039"),
@@ -178,7 +178,7 @@ export function initTasks() {
         "type": "project",
         "isDisabled": true,
         "project": "span905868",
-        "hideChildren": true
+        "hideChildren": false
     },
     {
         "start": new Date("2023-12-29T15:13:12.043"),

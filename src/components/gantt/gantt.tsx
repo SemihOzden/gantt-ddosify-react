@@ -27,7 +27,6 @@ import styles from "./gantt.module.css";
 export const Gantt: React.FunctionComponent<GanttProps> = ({
   tasks,
   headerHeight = 50,
-  columnWidth = 60,
   listCellWidth = "155px",
   rowHeight = 25,
   ganttHeight = 0,
@@ -78,6 +77,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
 
   const [taskListWidth, setTaskListWidth] = useState(0);
   const [svgContainerWidth, setSvgContainerWidth] = useState(0);
+  const [columnWidth, setColumnWidth] = useState(0);
   const [svgContainerHeight, setSvgContainerHeight] = useState(ganttHeight);
   const [barTasks, setBarTasks] = useState<BarTask[]>([]);
   const [ganttEvent, setGanttEvent] = useState<GanttEvent>({
@@ -91,7 +91,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   const [selectedTask, setSelectedTask] = useState<BarTask>();
   const [failedTask, setFailedTask] = useState<BarTask | null>(null);
 
-  const svgWidth = dateSetup.dates.length * columnWidth;
+  const svgWidth = svgContainerWidth;
   const ganttFullHeight = barTasks.length * rowHeight;
 
   const [scrollY, setScrollY] = useState(0);
@@ -243,6 +243,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   useEffect(() => {
     if (wrapperRef.current) {
       setSvgContainerWidth(wrapperRef.current.offsetWidth - taskListWidth);
+      setColumnWidth((wrapperRef.current.offsetWidth - taskListWidth)/11)
     }
   }, [wrapperRef, taskListWidth]);
 
