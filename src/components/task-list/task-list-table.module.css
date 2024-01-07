@@ -27,6 +27,8 @@
 .taskListNameWrapper {
   display: flex;
   cursor: pointer;
+  align-items:center;
+  justif-content:center;
 }
 
 .taskListExpander {
@@ -50,4 +52,30 @@
   max-width:12px;
   margin-top:4px;
   user-select: none;
+}
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(10px, -50%);
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
 }

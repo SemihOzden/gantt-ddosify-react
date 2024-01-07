@@ -38,7 +38,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
   const textRef = useRef<SVGTextElement>(null);
   const [taskItem, setTaskItem] = useState<JSX.Element>(<div />);
   const [isTextInside, setIsTextInside] = useState(true);
-
+  const duration=task.end.valueOf()-task.start.valueOf();
   useEffect(() => {
     switch (task.typeInternal) {
       case "milestone":
@@ -110,7 +110,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
       {taskItem}
       <text
         x={getX()}
-        y={task.y + taskHeight * 0.5}
+        y={isTextInside ? (task.y + taskHeight * 0.5):task.y + taskHeight * 0.5+5}
         className={
           isTextInside
             ? style.barLabel
@@ -118,7 +118,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
         }
         ref={textRef}
       >
-        {task.name}
+        {duration+"ms"}
       </text>
     </g>
   );

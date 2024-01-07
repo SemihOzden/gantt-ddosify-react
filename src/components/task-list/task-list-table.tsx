@@ -5,6 +5,37 @@ import { Task } from "../../types/public-types";
 const localeDateStringCache = {};
 const depthCache = {}
 
+interface TooltipProps {
+  name: string;
+  width:number;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({ name,width }) => {
+  let limit=name?.length;
+  function getTextWidth(text:string) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+  
+    if(context){context.font = getComputedStyle(document.body).font;}
+  
+    return context ? context.measureText(text).width : 0}
+
+  const textWidth=getTextWidth(name) || 0
+  if(textWidth>width){
+    limit=Math.floor(name.length/textWidth * width)-3
+  }
+  return (
+    <div
+      className={styles.tooltip}
+      data-tooltip={name}
+    >
+      {name.substring(0, limit)}{limit<name.length && ".."}
+    </div>
+  );
+};
+
+export default Tooltip;
+
 const toLocaleDateStringFactory =
   (locale: string) =>
   (date: Date, dateTimeOptions: Intl.DateTimeFormatOptions) => {
@@ -67,6 +98,11 @@ export const TaskListTableDefault: React.FC<{
 
   }, [tasks,toLocaleDateString])
 
+  const extractNumberFromString = (value: string): number => {
+    const numericValue = parseFloat(value);
+    return isNaN(numericValue) ? 0 : numericValue;
+  };
+
   return (
     <div
       className={styles.taskListWrapper}
@@ -82,7 +118,7 @@ export const TaskListTableDefault: React.FC<{
         } else if (t.hideChildren === true) {
           expanderSymbol = "▶";
         }
-
+        const depth=(handleDepth(t.project,t?.type ? t?.id : null))*12;
         return (
           <div
             className={styles.taskListTableRow}
@@ -95,10 +131,9 @@ export const TaskListTableDefault: React.FC<{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
               }}
-              title={t.name}
             >
               <div className={styles.taskListNameWrapper} onClick={() => onExpanderClick(t)}>
-              <span style={{marginLeft:`${(handleDepth(t.project,t?.type ? t?.id : null))*12}px`}}></span>
+              <span style={{marginLeft:`${depth}px`}}></span>
                 
                 <div
                   className={
@@ -111,7 +146,7 @@ export const TaskListTableDefault: React.FC<{
                 </div>
                 <div className={styles.taskListLine}>
                 </div>
-                <div style={{height:"14px"}}>{t.name}</div>
+                <div style={{height:"14px"}}><Tooltip width={(extractNumberFromString(rowWidth)-depth)} name={t.name}></Tooltip></div>
               </div>
             </div>
             {/* FROM Header */}
