@@ -6,7 +6,7 @@ export function initTasks() {
     {
         "start": new Date("2023-12-29T15:13:12.000"),
         "end": new Date("2023-12-29T15:13:12.080"),
-        "name": "/BCDEFGH/",
+        "name": "asdasdasdasdasd/BCDEFGH/",
         "id": "span908617",
         "progress": 100,
         "type": "project",
@@ -16,7 +16,7 @@ export function initTasks() {
     {
         "start": new Date("2023-12-29T15:13:12.032"),
         "end": new Date("2023-12-29T15:13:12.054"),
-        "name": "/CDEFGH/",
+        "name": "asdasdasdasdasd/CDEFGH/",
         "id": "span909141",
         "progress": 100,
         "type": "project",
@@ -27,7 +27,7 @@ export function initTasks() {
     {
         "start": new Date("2023-12-29T15:13:12.036"),
         "end": new Date("2023-12-29T15:13:12.054"),
-        "name": "/DEFGH/",
+        "name": "asdasdasdasdasd/DEFGH/",
         "id": "span907432",
         "progress": 100,
         "type": "project",
@@ -38,7 +38,7 @@ export function initTasks() {
     {
         "start": new Date("2023-12-29T15:13:12.039"),
         "end": new Date("2023-12-29T15:13:12.053"),
-        "name": "/EFGH/",
+        "name": "asdasdasdasdasd/EFGH/",
         "id": "span908614",
         "progress": 100,
         "type": "project",
@@ -49,7 +49,7 @@ export function initTasks() {
     {
         "start": new Date("2023-12-29T15:13:12.039"),
         "end": new Date("2023-12-29T15:13:12.053"),
-        "name": "/EFGH/",
+        "name": "asdasdasdasdasd/EFGH/",
         "id": "span909139",
         "progress": 100,
         "type": "task",
