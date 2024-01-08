@@ -244,8 +244,8 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
 
   useEffect(() => {
     console.log(wrapperRef, taskListWidth,iterations)
-    if (wrapperRef.current) {
-      setSvgContainerWidth(wrapperRef.current.offsetWidth - taskListWidth);
+    if (wrapperRef.current && iterations && taskListWidth) {
+      setSvgContainerWidth(Math.max(500,wrapperRef.current.offsetWidth - taskListWidth));
       setColumnWidth((wrapperRef.current.offsetWidth - taskListWidth)/(iterations-1))
     }
   }, [wrapperRef, taskListWidth,iterations]);
