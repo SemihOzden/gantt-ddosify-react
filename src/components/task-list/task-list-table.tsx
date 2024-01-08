@@ -25,12 +25,14 @@ const Tooltip: React.FC<TooltipProps> = ({ name,width }) => {
     limit=Math.floor(name.length/textWidth * width)-3
   }
   return (
-    <div
+    <div>
+    {limit<name.length ? <div
       className={styles.tooltip}
       data-tooltip={name}
     >
-      {name.substring(0, limit)}{limit<name.length && ".."}
-    </div>
+      {name.substring(0, limit)}..
+          </div>:<div className={styles.fitTooltipText}>{name}</div>}
+          </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import { Task } from "../types/public-types";
 import { BarTask, TaskTypeInternal } from "../types/bar-task";
 import { BarMoveAction } from "../types/gantt-task-actions";
+import { addToDate } from "./date-helper";
 
 export const convertToBarTasks = (
   tasks: Task[],
@@ -20,7 +21,8 @@ export const convertToBarTasks = (
   projectBackgroundColor: string,
   projectBackgroundSelectedColor: string,
   milestoneBackgroundColor: string,
-  milestoneBackgroundSelectedColor: string
+  milestoneBackgroundSelectedColor: string,
+  isMinimumStep:boolean,
 ) => {
   let barTasks = tasks.map((t, i) => {
     return convertToBarTask(
@@ -42,7 +44,8 @@ export const convertToBarTasks = (
       projectBackgroundColor,
       projectBackgroundSelectedColor,
       milestoneBackgroundColor,
-      milestoneBackgroundSelectedColor
+      milestoneBackgroundSelectedColor,
+      isMinimumStep,
     );
   });
 
@@ -80,7 +83,8 @@ const convertToBarTask = (
   projectBackgroundColor: string,
   projectBackgroundSelectedColor: string,
   milestoneBackgroundColor: string,
-  milestoneBackgroundSelectedColor: string
+  milestoneBackgroundSelectedColor: string,
+  isMinimumStep:boolean,
 ): BarTask => {
   let barTask: BarTask;
   switch (task.type) {
@@ -112,7 +116,8 @@ const convertToBarTask = (
         projectProgressColor,
         projectProgressSelectedColor,
         projectBackgroundColor,
-        projectBackgroundSelectedColor
+        projectBackgroundSelectedColor,
+        isMinimumStep
       );
       break;
     default:
@@ -129,7 +134,8 @@ const convertToBarTask = (
         barProgressColor,
         barProgressSelectedColor,
         barBackgroundColor,
-        barBackgroundSelectedColor
+        barBackgroundSelectedColor,
+        isMinimumStep
       );
       break;
   }
@@ -149,11 +155,17 @@ const convertToBar = (
   barProgressColor: string,
   barProgressSelectedColor: string,
   barBackgroundColor: string,
-  barBackgroundSelectedColor: string
+  barBackgroundSelectedColor: string,
+  isMinimumStep:boolean,
 ): BarTask => {
   let x1: number;
   let x2: number;
-  if (rtl) {
+  if(isMinimumStep){
+    const newEndDate = addToDate(task.end, 1, "millisecond");
+    x1 = taskXCoordinate(task.start, dates, columnWidth);
+    x2 = taskXCoordinate(newEndDate, dates, columnWidth);
+  }
+  else if (rtl) {
     x2 = taskXCoordinateRTL(task.start, dates, columnWidth);
     x1 = taskXCoordinateRTL(task.end, dates, columnWidth);
   } else {

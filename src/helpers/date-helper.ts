@@ -76,6 +76,7 @@ export const ganttDateRange = (
 ) => {
   let newStartDate: Date = tasks[0].start;
   let newEndDate: Date = tasks[0].start;
+  let isMinimumStep=false;
   for (const task of tasks) {
     if (task.start < newStartDate) {
       newStartDate = task.start;
@@ -152,10 +153,13 @@ export const ganttDateRange = (
       // in case of millisecond start and end date should start from 0 and end with 1000 ms respectively to avoid rounding issues in calculations and rendering of the chart (e.g. 1.9999999999999998 instead of 2) - see #100 and #101 for details and examples of the issue and fix ( 
     case ViewMode.Millisecond:
       newStartDate = addToDate(newStartDate, 0, "millisecond");
-      console.log(newEndDate.getMilliseconds())
+      if((newStartDate.getTime()-newEndDate.getTime())===0){
+        newEndDate = addToDate(newEndDate, 1, "millisecond");
+        isMinimumStep=true;
+      }
       break;
   }
-  return [newStartDate, newEndDate];
+  return {dates:[newStartDate, newEndDate],isMinimumStep};
 };
 
 export const seedDates = (

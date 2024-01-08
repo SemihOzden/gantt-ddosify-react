@@ -68,7 +68,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   const wrapperRef = useRef<HTMLDivElement>(null);
   const taskListRef = useRef<HTMLDivElement>(null);
   const [dateSetup, setDateSetup] = useState<DateSetup>(() => {
-    const [startDate, endDate] = ganttDateRange(tasks, viewMode, preStepsCount);
+    const {dates:[startDate, endDate]} = ganttDateRange(tasks, viewMode, preStepsCount);
     return { viewMode, dates: seedDates(startDate, endDate, viewMode) };
   });
   const [currentViewDate, setCurrentViewDate] = useState<Date | undefined>(
@@ -108,7 +108,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
       filteredTasks = tasks;
     }
     filteredTasks = filteredTasks.sort(sortTasks);
-    const [startDate, endDate] = ganttDateRange(
+    const {dates:[startDate, endDate],isMinimumStep} = ganttDateRange(
       filteredTasks,
       viewMode,
       preStepsCount
@@ -141,7 +141,8 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
         projectBackgroundColor,
         projectBackgroundSelectedColor,
         milestoneBackgroundColor,
-        milestoneBackgroundSelectedColor
+        milestoneBackgroundSelectedColor,
+        isMinimumStep
       )
     );
   }, [
@@ -243,7 +244,6 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   }, [taskListRef, listCellWidth]);
 
   useEffect(() => {
-    console.log(wrapperRef, taskListWidth,iterations)
     if (wrapperRef.current && iterations && taskListWidth) {
       setSvgContainerWidth(Math.max(500,wrapperRef.current.offsetWidth - taskListWidth));
       setColumnWidth((wrapperRef.current.offsetWidth - taskListWidth)/(iterations-1))
