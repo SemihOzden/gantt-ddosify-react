@@ -1,7 +1,7 @@
 .taskListWrapper {
   display: table;
-  border-bottom: #687a96 1px solid;
-  border-left: #687a96 1px solid;
+  border-bottom: #BABFC8 1px solid;
+  border-left: #BABFC8 1px solid;
 }
 
 .taskListTableRow {
@@ -14,7 +14,7 @@
 }
 
 .taskListTableRow:nth-of-type(odd) {
-  background-color: #E2E2E2;
+  background-color: #F2F3F5;
 }
 
 .taskListCell {

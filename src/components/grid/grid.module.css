@@ -1,5 +1,5 @@
 .gridRow {
-  fill:#E2E2E2;
+  fill:#F2F3F5;
 }
 
 .gridRow:nth-child(even) {
@@ -12,5 +12,5 @@
 }
 
 .gridTick {
-  stroke: #BABFC8;
+  stroke: #fff;
 }

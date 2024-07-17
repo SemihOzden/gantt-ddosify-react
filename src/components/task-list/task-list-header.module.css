@@ -1,13 +1,13 @@
 .ganttTable {
   display: table;
-  border-bottom: #fff 1px solid;
-  border-top: #fff 1px solid;
-  border-left: #fff 1px solid;
+  border-bottom: #BABFC8 1px solid;
+  border-top: #BABFC8 1px solid;
+  border-left: #BABFC8 1px solid;
   background-color: #fafafa;
   color: white;
 }
 body{
-  background-color: #283045;
+  background-color: #fff;
   color: #6d6d6d;
 }
 
