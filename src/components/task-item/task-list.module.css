@@ -1,5 +1,5 @@
 .barLabel {
-  fill: #fff;
+  fill: #191919;
   text-anchor: middle;
   font-weight: lighter;
   dominant-baseline: central;
@@ -12,7 +12,7 @@
 }
 
 .barLabelOutside {
-  fill: #f7f7f7;
+  fill: #6d6d6d;
   text-anchor: start;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

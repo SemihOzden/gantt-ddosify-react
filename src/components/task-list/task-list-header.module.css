@@ -1,15 +1,14 @@
 .ganttTable {
   display: table;
-  border-bottom: #687a96 1px solid;
-  border-top: #687a96 1px solid;
-  border-left: #687a96 1px solid;
-  background-color: #3F4A5A;
+  border-bottom: #fff 1px solid;
+  border-top: #fff 1px solid;
+  border-left: #fff 1px solid;
+  background-color: #fafafa;
   color: white;
 }
 body{
   background-color: #283045;
-  color: #F7F7F7;
-  
+  color: #6d6d6d;
 }
 
 .ganttTable_Header {
@@ -27,4 +26,5 @@ body{
   display: table-cell;
   vertical-align: -webkit-baseline-middle;
   vertical-align: middle;
+  color: #191919;
 }

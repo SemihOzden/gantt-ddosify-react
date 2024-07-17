@@ -10,11 +10,11 @@
 }
 
 .taskListTableRow:nth-of-type(even) {
-  background-color:  #4E5767;
+  background-color:  #FAFAFA;
 }
 
 .taskListTableRow:nth-of-type(odd) {
-  background-color: #394552;
+  background-color: #E2E2E2;
 }
 
 .taskListCell {
@@ -33,7 +33,7 @@
 
 .taskListExpander {
   margin-top:calc(7px - 0.3rem);
-  color: #0AB89B;
+  color: #F7A71C;
   font-size: 0.6rem;
   user-select: none;
   cursor: pointer;
@@ -42,7 +42,7 @@
 
 .taskListLine {
   height:14px;
-  border:1.3px solid #0AB89B;
+  border:1.3px solid #F7A71C;
   width:0px;
   margin-right:2px
 }
@@ -75,7 +75,7 @@
   transform: translate(10px, -50%);
   padding: 5px;
   background-color: #333;
-  color: #fff;
+  color: #191919;
   border-radius: 5px;
   white-space: nowrap;
   opacity: 0;
